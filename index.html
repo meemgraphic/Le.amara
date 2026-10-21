@@ -44,7 +44,7 @@ form input,form textarea{width:100%;background:#ffffff0d;border:1px solid var(--
 import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import{getFirestore,collection,onSnapshot,addDoc,doc,serverTimestamp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 // 1) PASTE YOUR FIREBASE WEB CONFIG HERE
-const CFG={apiKey:"",authDomain:"",projectId:"",storageBucket:"",messagingSenderId:"",appId:""};
+const CFG={apiKey:"AIzaSyAF21nGfjOdZNWFJtthG0CqS1TNRITBUNs",authDomain:"trail-b2c21.firebaseapp.com",projectId:"trail-b2c21",storageBucket:"trail-b2c21.firebasestorage.app",messagingSenderId:"494369746352",appId:"1:494369746352:web:1b7598ad63de42037c7a75"};
 const db=getFirestore(initializeApp(CFG));
 const $=s=>document.querySelector(s),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const ld=(k,d)=>{try{return JSON.parse(localStorage[k])}catch{return d}},sv=(k,v)=>{try{localStorage[k]=JSON.stringify(v)}catch{}};
