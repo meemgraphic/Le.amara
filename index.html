@@ -6,14 +6,22 @@
 button,input,textarea{font:inherit;color:inherit}button{cursor:pointer;border:0;background:none}
 a{color:inherit}:focus-visible{outline:2px solid var(--peach);outline-offset:2px}
 .ann{background:var(--peach);color:var(--char);text-align:center;font-size:14px;padding:6px}.ann:empty{display:none}
-header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;background:#15171cdd;backdrop-filter:blur(10px)}
-.logo{font:400 28px Italiana,serif;letter-spacing:.02em}
-.ic{display:flex;gap:6px}.ic button{padding:8px 14px;border:1px solid var(--line);border-radius:99px}
-.ic b{background:var(--peach);color:var(--char);border-radius:99px;padding:0 7px;margin-left:4px;font-weight:500}
-.hero{margin:12px 3vw;min-height:76vh;border-radius:28px;background:linear-gradient(#15171c66,#15171cdd),var(--bg,#2b2d33) center/cover;display:flex;flex-direction:column;justify-content:flex-end;padding:6vw;border:1px solid var(--line)}
-.hero h1{font:400 clamp(44px,10vw,120px)/.95 Italiana,serif;max-width:12ch}
-.hero h1+p{font:400 clamp(26px,5vw,54px)/1.1 Italiana,serif;margin:6px 0 0 8vw;color:var(--peach)}
-.cta{margin-top:24px;align-self:flex-start;background:var(--peach);color:var(--char);padding:12px 28px;border-radius:99px;font-weight:500}
+html{scroll-behavior:smooth}[hidden]{display:none!important}
+header{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between;padding:12px 4vw;background:#15171cdd;backdrop-filter:blur(10px)}
+.logo{font:400 26px Italiana,serif;border:1px solid var(--line);border-radius:99px;padding:3px 20px;display:inline-block}
+.pn{display:flex;gap:2px;background:#ffffff14;border-radius:99px;padding:4px;overflow-x:auto}.pn a{text-decoration:none;padding:7px 18px;border-radius:99px;white-space:nowrap}.pn a:first-child{background:var(--blush);color:var(--char)}
+.ic{display:flex;gap:6px}.ic button{padding:8px 14px;border:1px solid var(--line);border-radius:99px}.ic b{background:var(--peach);color:var(--char);border-radius:99px;padding:0 7px;margin-left:4px;font-weight:500}
+@media(max-width:700px){.pn{order:3;width:100%}}
+.hero{position:relative;overflow:hidden;margin:12px 3vw;min-height:78vh;border-radius:28px;border:1px solid var(--line);background:#2b2d33;display:flex;align-items:flex-end}
+.sl{position:absolute;inset:0;background:center/cover;opacity:0;transition:opacity 1s}.sl.on{opacity:1}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(#15171c33,#15171cdd);z-index:1}.ov{position:relative;z-index:2;padding:6vw}
+.hero h1{font:400 clamp(44px,10vw,120px)/.95 Italiana,serif;max-width:12ch}.hero h1+p{font:400 clamp(26px,5vw,54px)/1.1 Italiana,serif;margin:6px 0 0 8vw;color:var(--peach)}
+.cta{display:inline-block;margin-top:24px;background:var(--peach);color:var(--char);padding:12px 28px;border-radius:99px;font-weight:500;text-decoration:none}
+.dots{position:absolute;z-index:2;right:24px;bottom:24px;display:flex;gap:8px}.dots button{width:10px;height:10px;border-radius:50%;background:#fff6}.dots .on{background:var(--peach);width:26px;border-radius:99px}
+.sec{font:400 clamp(30px,5vw,46px) Italiana,serif;padding:48px 5vw 8px}.evs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;padding:12px 5vw}
+.ev{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#ffffff08}.ev img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}.ev div{padding:16px}.ev time{color:var(--peach);font-size:14px}.ev h3{font:400 24px Italiana,serif;margin:2px 0 4px}
+#ft{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;margin:40px 3vw 16px;padding:36px 4vw;border:1px solid var(--line);border-radius:28px;background:#ffffff08;text-align:left}
+#ft h4{font:500 15px Jost;margin-bottom:8px;color:var(--peach)}#ft p{margin:4px 0}#ft a,#ft button{display:block;text-decoration:none;padding:3px 0;text-align:left;opacity:.85}.note{font-size:14px;opacity:.75;margin:8px 0}
 .chips{display:flex;gap:8px;overflow-x:auto;padding:36px 5vw 8px}.chips button{white-space:nowrap;padding:7px 18px;border:1px solid var(--line);border-radius:99px}
 .chips .on{background:var(--peach);color:var(--char)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:18px;padding:16px 5vw 60px}
@@ -31,14 +39,15 @@ dialog::backdrop{background:#000a}dialog img{width:100%;max-height:50vh;object-f
 .q button{width:28px;height:28px;border:1px solid var(--line);border-radius:50%}
 form input,form textarea{width:100%;background:#ffffff0d;border:1px solid var(--line);border-radius:12px;padding:11px;margin:5px 0}
 .pay{display:flex;gap:10px;margin:8px 0}.pay label{flex:1;border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;cursor:pointer}.pay input{width:auto;margin-right:6px}
-.x{float:right;font-size:22px}footer{text-align:center;padding:40px;border-top:1px solid var(--line);opacity:.7}
+.x{float:right;font-size:22px}footer{text-align:center;padding:0 0 30px;font-size:14px}footer small{opacity:.6}
 @media(prefers-reduced-motion:no-preference){.hero{animation:f .9s ease both}@keyframes f{from{opacity:0;transform:scale(.98)}}}
 </style></head><body>
 <div class="ann" id="ann"></div>
-<header><span class="logo">Le.amara</span><div class="ic"><button data-a="likedOnly" aria-label="Liked items">♡ <b id="lc">0</b></button><button data-a="cart">Bag <b id="cc">0</b></button></div></header>
-<section class="hero" id="hero"><h1 id="ht">threads of elegance,</h1><p id="hs">woven by sisters</p><a class="cta" href="#shop">Shop the collection</a></section>
-<div class="chips" id="chips"></div><main class="grid" id="shop"></main>
-<footer>Le.amara · Threads of elegance, woven by sisters</footer>
+<header id="top"><span class="logo">Le.amara</span><nav class="pn"><a href="#top">Home</a><a href="#shop-top">Shop</a><a href="#events" id="evl" hidden>Events</a><a href="#contact">Contact</a></nav><div class="ic"><button data-a="likedOnly" aria-label="Liked items">♡ <b id="lc">0</b></button><button data-a="cart">Bag <b id="cc">0</b></button></div></header>
+<section class="hero" id="hero"><div id="slides"></div><div class="ov"><h1 id="ht">threads of elegance,</h1><p id="hs">woven by sisters</p><a class="cta" href="#shop-top">Shop the collection</a></div><div class="dots" id="dots"></div></section>
+<h2 class="sec" id="shop-top">Shop</h2><div class="chips" id="chips"></div><main class="grid" id="shop"></main>
+<section id="events" hidden><h2 class="sec">Events</h2><div class="evs" id="evs"></div></section>
+<footer id="contact"><div id="ft"></div><small>© Le.amara · Threads of elegance, woven by sisters</small></footer>
 <dialog id="dlg"></dialog>
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
@@ -52,8 +61,15 @@ const inr=n=>"₹"+Number(n).toLocaleString("en-IN");
 let P=[],S={},cart=ld("cart",[]),likes=ld("likes",[]),cat="All",liked=false,sel=null,size="";
 onSnapshot(collection(db,"products"),s=>{P=s.docs.map(d=>({id:d.id,...d.data()})).filter(p=>p.active!==false).sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));draw()});
 onSnapshot(doc(db,"settings","store"),s=>{S=s.data()||{};$("#ann").textContent=S.announcement||"";
- if(S.bannerImage)$("#hero").style.setProperty("--bg",`url("${S.bannerImage}")`);
- if(S.bannerTitle)$("#ht").textContent=S.bannerTitle;if(S.bannerSub!==undefined&&S.bannerTitle)$("#hs").textContent=S.bannerSub;draw()});
+ const w=(S.whatsapp||"").replace(/\D/g,""),a=(h,t,x="")=>h?`<a href="${esc(h)}" ${x}>${t}</a>`:"",ex='target="_blank" rel="noopener"';
+ $("#ft").innerHTML=`<div><span class="logo">Le.amara</span><p style="margin-top:12px">${esc(S.about||"Threads of elegance, woven by sisters.")}</p></div><div><h4>Visit us</h4>${S.address?`<p>${esc(S.address)}</p>`:""}${a(S.phone&&"tel:"+S.phone,esc(S.phone))}${a(S.email&&"mailto:"+S.email,esc(S.email))}</div><div><h4>Follow</h4>${a(S.instagram,"Instagram",ex)}${a(S.facebook,"Facebook",ex)}${a(w&&"https://wa.me/"+w,"WhatsApp",ex)}</div><div><h4>Shop</h4>${(S.categories||[]).map(c=>`<button data-cat="${esc(c)}">${esc(c)}</button>`).join("")}</div>`;draw()});
+let B=[],bi=0,tm;const asc=(a,b)=>(a.createdAt?.seconds||0)-(b.createdAt?.seconds||0);
+onSnapshot(collection(db,"banners"),s=>{B=s.docs.map(d=>d.data()).sort(asc);bi=0;$("#slides").innerHTML=B.map(x=>`<div class="sl" style="background-image:url('${esc(x.image)}')"></div>`).join("");
+ $("#dots").innerHTML=B.length>1?B.map((_,i)=>`<button data-b="${i}" aria-label="Banner ${i+1}"></button>`).join(""):"";show(0)});
+function show(i){bi=i;clearInterval(tm);document.querySelectorAll(".sl").forEach((e,k)=>e.classList.toggle("on",k==i));document.querySelectorAll("#dots button").forEach((e,k)=>e.classList.toggle("on",k==i));
+ if(B[i]){$("#ht").textContent=B[i].title||"";$("#hs").textContent=B[i].sub||""}if(B.length>1)tm=setInterval(()=>show((bi+1)%B.length),5500)}
+onSnapshot(collection(db,"events"),s=>{const E=s.docs.map(d=>d.data()).sort((a,b)=>String(b.date||"").localeCompare(String(a.date||"")));$("#events").hidden=$("#evl").hidden=!E.length;
+ $("#evs").innerHTML=E.map(x=>`<article class="ev">${x.image?`<img src="${esc(x.image)}" alt="" loading="lazy">`:""}<div><time>${x.date?new Date(x.date).toLocaleDateString("en-IN",{day:"numeric",month:"long",year:"numeric"}):""}</time><h3>${esc(x.title)}</h3><p>${esc(x.desc)}</p></div></article>`).join("")});
 function draw(){const cats=["All",...(S.categories||[])];
  $("#chips").innerHTML=cats.map(c=>`<button class="${!liked&&c==cat?"on":""}" data-cat="${esc(c)}">${esc(c)}</button>`).join("")+`<button class="${liked?"on":""}" data-a="likedOnly">Liked</button>`;
  const L=P.filter(p=>liked?likes.includes(p.id):cat=="All"||p.category==cat);
@@ -64,17 +80,18 @@ function save(){sv("cart",cart);sv("likes",likes);draw()}
 function open(h){const d=$("#dlg");d.innerHTML=h;d.showModal()}
 function product(p){sel=p;size=(p.sizes||[])[0]||"";open(`<button class="x" data-close aria-label="Close">×</button><img src="${esc(p.image)}" alt=""><h2 style="font:400 28px Italiana">${esc(p.name)}</h2><p style="color:var(--peach)">${inr(p.price)}</p><p>${esc(p.desc)}</p>${(p.sizes||[]).length?`<div class="sz">${p.sizes.map(s=>`<button data-size="${esc(s)}" class="${s==size?"on":""}">${esc(s)}</button>`).join("")}</div>`:""}<button class="btn" data-add ${p.soldOut?"disabled":""}>${p.soldOut?"Sold out":"Add to bag"}</button>`)}
 function bag(){open(`<button class="x" data-close aria-label="Close">×</button><h2 style="font:400 28px Italiana">Your bag</h2>${cart.length?cart.map((c,i)=>`<div class="row"><img src="${esc(c.image)}" alt=""><div>${esc(c.name)}<br><small>${esc(c.size)} · ${inr(c.price)}</small></div><span class="q"><button data-q="${i},-1">−</button> ${c.q} <button data-q="${i},1">+</button></span></div>`).join("")+`<p style="margin-top:12px">Total <b>${inr(total())}</b></p><button class="btn" data-a="checkout">Checkout</button>`:`<p class="empty">Your bag is empty.</p>`}`)}
-function checkout(){open(`<button class="x" data-close aria-label="Close">×</button><h2 style="font:400 28px Italiana">Delivery details</h2><form id="f"><input name="name" placeholder="Full name" required><input name="phone" type="tel" placeholder="Phone number" required><textarea name="address" rows="3" placeholder="Full address with pincode" required></textarea><div class="pay"><label><input type="radio" name="pay" value="Cash on delivery" checked>Cash on delivery</label>${S.upi?'<label><input type="radio" name="pay" value="UPI">UPI</label>':""}</div><p>Total <b>${inr(total())}</b></p><button class="btn" id="go">Confirm order</button></form>`);
+function checkout(){open(`<button class="x" data-close aria-label="Close">×</button><h2 style="font:400 28px Italiana">Delivery details</h2><form id="f"><input name="name" placeholder="Full name" required><input name="phone" type="tel" placeholder="Phone number" required><textarea name="address" rows="3" placeholder="Full address with pincode" required></textarea><p class="note">Payment is by UPI. After you place the order we confirm it on WhatsApp and send a UPI QR. Your order ships after payment.</p><p>Total <b>${inr(total())}</b></p><button class="btn" id="go">Confirm order</button></form>`);
  $("#f").onsubmit=async e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target)),b=$("#go");b.disabled=true;b.textContent="Placing order…";
- try{const o={...f,items:cart,total:total(),status:"New",createdAt:serverTimestamp()},r=await addDoc(collection(db,"orders"),o),id=r.id.slice(0,6).toUpperCase();
- const msg=`New order #${id} – Le.amara\n${cart.map(c=>`• ${c.name} (${c.size||"-"}) x${c.q} – ${inr(c.price*c.q)}`).join("\n")}\nTotal: ${inr(o.total)}\nPayment: ${f.pay}\n\nName: ${f.name}\nPhone: ${f.phone}\nAddress: ${f.address}`;
- const wa=`https://wa.me/${(S.whatsapp||"").replace(/\D/g,"")}?text=${encodeURIComponent(msg)}`,upi=`upi://pay?pa=${encodeURIComponent(S.upi||"")}&pn=Le.amara&am=${o.total}&cu=INR&tn=Order ${id}`;
- cart=[];save();open(`<h2 style="font:400 28px Italiana">Order placed ✓</h2><p>Order #${id} is saved. Send it on WhatsApp so we can confirm it.</p>${f.pay=="UPI"?`<a class="btn" href="${upi}">Pay ${inr(o.total)} with UPI</a>`:""}<a class="btn ${f.pay=="UPI"?"o":""}" href="${wa}" target="_blank" rel="noopener">Send order on WhatsApp</a><button class="btn o" data-close>Keep shopping</button>`);window.open(wa,"_blank")}
+ try{const o={...f,pay:"UPI",items:cart,total:total(),status:"New",createdAt:serverTimestamp()},r=await addDoc(collection(db,"orders"),o),id=r.id.slice(0,6).toUpperCase();
+ const msg=`New order #${id} – Le.amara\n${cart.map(c=>`• ${c.name} (${c.size||"-"}) x${c.q} – ${inr(c.price*c.q)}`).join("\n")}\nTotal: ${inr(o.total)}\nPayment: UPI (QR to be sent after confirmation)\n\nName: ${f.name}\nPhone: ${f.phone}\nAddress: ${f.address}`;
+ const wa=`https://wa.me/${(S.whatsapp||"").replace(/\D/g,"")}?text=${encodeURIComponent(msg)}`;
+ cart=[];save();open(`<h2 style="font:400 28px Italiana">Order placed ✓</h2><p>Order #${id} is saved. Send it on WhatsApp so we can confirm it. We'll reply with a UPI QR, and your order ships after payment.</p><a class="btn" href="${wa}" target="_blank" rel="noopener">Send order on WhatsApp</a><button class="btn o" data-close>Keep shopping</button>`);window.open(wa,"_blank")}
  catch(err){b.disabled=false;b.textContent="Confirm order";alert("Couldn't place the order. Check your connection and try again.")}}}
 document.addEventListener("click",e=>{const t=e.target,g=s=>t.closest(s);
  if(g("[data-close]"))return $("#dlg").close();
  if(g("[data-like]")){const id=g("[data-like]").dataset.like;likes=likes.includes(id)?likes.filter(x=>x!=id):[...likes,id];return save()}
- if(g("[data-cat]")){cat=g("[data-cat]").dataset.cat;liked=false;return draw()}
+ if(g("[data-cat]")){cat=g("[data-cat]").dataset.cat;liked=false;draw();return $("#chips").scrollIntoView({behavior:"smooth"})}
+ if(g("[data-b]"))return show(+g("[data-b]").dataset.b);
  if(g("[data-size]")){size=g("[data-size]").dataset.size;document.querySelectorAll("[data-size]").forEach(b=>b.classList.toggle("on",b.dataset.size==size));return}
  if(g("[data-add]")){const k=cart.find(c=>c.id==sel.id&&c.size==size);k?k.q++:cart.push({id:sel.id,name:sel.name,price:+sel.price,image:sel.image,size,q:1});save();return bag()}
  if(g("[data-q]")){const[i,d]=g("[data-q]").dataset.q.split(",").map(Number);cart[i].q+=d;if(cart[i].q<1)cart.splice(i,1);save();return bag()}
